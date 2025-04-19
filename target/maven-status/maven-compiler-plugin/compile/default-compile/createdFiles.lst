@@ -1,0 +1,11 @@
+driver\DriverManagerFactory$1.class
+pages\Produto.class
+hooks\DefaultProperties.class
+report\Report.class
+driver\ChromeDriverManager.class
+driver\DriverManager.class
+driver\DriverType.class
+pages\Home.class
+driver\DriverManagerFactory.class
+driver\EdgeDriverManager.class
+pages\Carrinho.class
