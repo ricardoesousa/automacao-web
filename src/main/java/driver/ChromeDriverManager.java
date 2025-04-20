@@ -13,7 +13,7 @@ public class ChromeDriverManager extends DriverManager {
     void startService() {
         if (chromeService == null) {
             chromeService = new ChromeDriverService.Builder()
-                    .usingDriverExecutable(new File("src\\test\\resources\\chromedriver.exe"))
+                    .usingDriverExecutable(new File("src\\test\\resources\\drivers\\chromedriver.exe"))
                     .usingAnyFreePort()
                     .build();
         }
