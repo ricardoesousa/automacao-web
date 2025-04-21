@@ -37,6 +37,7 @@ public class ProdutoSteps extends DriverManagerFactory implements DefaultPropert
     @Então("o produto deve continuar com os dados idênticos ao da página de produto: {string},{string}")
     public void oProdutoDeveContinuarComOsDadosIdenticosAoDaHomepage(String nome, String preco_normal) {
         carrinho.validaDadosProduto(nome, preco_normal);
+        carrinho.excluiProduto();
     }
 
 

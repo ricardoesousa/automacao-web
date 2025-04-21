@@ -4,27 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fd3e818-2d5d-45da-8ac0-b4bfc6e60b7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/listeners/PageSourceOnFailureExtension.java" afterDir="false" />
+    <list default="true" id="5fd3e818-2d5d-45da-8ac0-b4bfc6e60b7d" name="Default Changelist" comment="ajustes">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/driver/ChromeDriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/driver/ChromeDriverManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/driver/EdgeDriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/driver/EdgeDriverManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hooks/Hook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hooks/Hook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/drivers/chromedriver.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hooks/DefaultProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hooks/DefaultProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Carrinho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Carrinho.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/report/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/report/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hooks/Hook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hooks/Hook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/steps/ProdutoSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/ProdutoSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/Produto.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Produto.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/msedgedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/drivers/msedgedriver.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/json-cucumber-reports/cucumber.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2025-04-18T20-11-18_814-jvmRun1.dump" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2025-04-18T20-11-18_814-jvmRun1.dumpstream" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/chromedriver.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/Produto.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/msedgedriver.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/xml-junit/junit.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,14 +60,18 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Cucumber Java.Feature: Produto (1).executor": "Run",
     "Cucumber Java.Feature: Produto.executor": "Run",
-    "JUnit.Runner (1).executor": "Run",
+    "JUnit.Runner (1).executor": "Debug",
     "JUnit.Runner.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/ricar/Desktop/TCC/desafio-web-petz/src/test/resources",
-    "settings.editor.selected.configurable": "ml.llm.LLMConfigurable"
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editor.preferences.tabs"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -90,7 +85,26 @@
       <recent name="hooks" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Runner (1)">
+  <component name="RunManager" selected="Cucumber Java.Feature: Produto (1)">
+    <configuration name="Feature: Produto (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="3" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Produto.feature" />
+      <option name="GLUE" value="hooks steps" />
+      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
+      <module name="automacao-web" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm3SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: Produto" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cucumber.api.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Feature: Produto" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="3" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Produto.feature" />
@@ -142,6 +156,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Feature: Produto (1)" />
         <item itemvalue="JUnit.Runner (1)" />
         <item itemvalue="JUnit.Runner" />
         <item itemvalue="Cucumber Java.Feature: Produto" />
@@ -157,6 +172,15 @@
       <option name="presentableId" value="Default" />
       <updated>1620920948569</updated>
     </task>
+    <task id="LOCAL-00001" summary="ajustes">
+      <option name="closed" value="true" />
+      <created>1745181928472</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1745181928472</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,6 +196,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="ajustes" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajustes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -182,14 +208,9 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/pages/Home.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/pages/Home.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/main/java/report/Report.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

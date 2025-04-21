@@ -2,6 +2,6 @@ package hooks;
 
 public interface DefaultProperties {
 
-    int TIME_OUT = 15;
+    int TIME_OUT = 5;
     String URL_BASE = "https://www.petz.com.br";
 }

@@ -10,12 +10,12 @@ import report.Report;
 
 import java.util.concurrent.TimeUnit;
 
-public class Hook extends DriverManagerFactory implements DefaultProperties{
+public class Hook extends DriverManagerFactory implements DefaultProperties {
 
     DriverManager driverManager;
 
     @Before
-    public void init(Scenario scenario){
+    public void init(Scenario scenario) {
         Report.scenario = scenario;
         driverManager = DriverManagerFactory.getManager(DriverType.EDGE);
         driver = driverManager.getDriver();
@@ -25,8 +25,11 @@ public class Hook extends DriverManagerFactory implements DefaultProperties{
     }
 
     @After
-    public void tearDown(Scenario scenario){
-        Report.tirarFotoDaTela();
+    public void tearDown(Scenario scenario) {
+        if (scenario.isFailed()) {
+            Report.salvarEvidencia("O cenário: " + scenario.getName() + " falhou!");
+            Report.salvarPageSource();
+        }
         driver.quit();
     }
 }
