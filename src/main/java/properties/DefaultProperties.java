@@ -1,4 +1,4 @@
-package hooks;
+package properties;
 
 public interface DefaultProperties {
 

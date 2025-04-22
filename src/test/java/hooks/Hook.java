@@ -1,14 +1,18 @@
 package hooks;
 
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import driver.DriverManager;
 import driver.DriverManagerFactory;
 import driver.DriverType;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import properties.DefaultProperties;
 import report.Report;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
+
+import static report.Report.salvarEvidencia;
+import static report.Report.salvarPageSource;
 
 public class Hook extends DriverManagerFactory implements DefaultProperties {
 
@@ -19,16 +23,15 @@ public class Hook extends DriverManagerFactory implements DefaultProperties {
         Report.scenario = scenario;
         driverManager = DriverManagerFactory.getManager(DriverType.EDGE);
         driver = driverManager.getDriver();
-        driver.manage().timeouts().implicitlyWait(DefaultProperties.TIME_OUT, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIME_OUT));
         driver.manage().window().maximize();
-
     }
 
     @After
     public void tearDown(Scenario scenario) {
         if (scenario.isFailed()) {
-            Report.salvarEvidencia("O cenário: " + scenario.getName() + " falhou!");
-            Report.salvarPageSource();
+            salvarEvidencia("O cenário: " + scenario.getName() + " falhou!");
+            salvarPageSource();
         }
         driver.quit();
     }

@@ -1,34 +1,32 @@
 package report;
 
-import cucumber.api.Scenario;
 import driver.DriverManagerFactory;
+import io.cucumber.java.Scenario;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriverException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 public class Report {
 
     public static Scenario scenario;
+    private static final Logger logger = LoggerFactory.getLogger(Report.class);
 
-    @Attachment(value = "Page Screenshot", type = "image/png")
     public static void tirarFotoDaTela() {
-        try {
-            final byte[] screenshot = ((TakesScreenshot) DriverManagerFactory.getDriver()).getScreenshotAs(OutputType.BYTES);
-            scenario.embed(screenshot, "image/png");
-        } catch (WebDriverException e) {
-            e.printStackTrace();
-        }
+        final byte[] screenshot = ((TakesScreenshot) DriverManagerFactory.getDriver()).getScreenshotAs(OutputType.BYTES);
+        scenario.attach(screenshot, "image/png", "Imagem da tela");
     }
 
     public static void criarLog(String text) {
-        scenario.write(text);
+        scenario.log(text);
     }
 
     public static void salvarEvidencia(String text) {
@@ -54,20 +52,19 @@ public class Report {
             // Cria um nome de arquivo único com timestamp
             String timestamp = LocalDateTime.now()
                     .format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
-            String fileName = scenario.getName()
-                    .replaceAll("[^a-zA-Z0-9]", "_") + "_" + timestamp + ".txt";
+            String fileName = timestamp + "_" + scenario.getName()
+                    .replaceAll("[^a-zA-Z0-9]", "_") + ".txt";
 
             // Caminho completo do arquivo
             File pageSourceFile = new File(directory, fileName);
 
             // Salva o page source em um arquivo
             try (FileWriter writer = new FileWriter(pageSourceFile)) {
-                writer.write(DriverManagerFactory.getDriver().getPageSource());
-                System.out.println("Page source salvo em: " + pageSourceFile.getAbsolutePath());
+                writer.write(Objects.requireNonNull(DriverManagerFactory.getDriver().getPageSource()));
+                logger.info("Page source salvo em: {}", pageSourceFile.getAbsolutePath());
             }
         } catch (IOException e) {
-            System.err.println("Erro ao salvar page source: " + e.getMessage());
-            e.printStackTrace();
+            logger.error("Erro ao salvar page source: {}", e.getMessage(), e);
         }
     }
 

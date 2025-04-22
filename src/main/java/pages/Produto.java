@@ -35,7 +35,6 @@ public class Produto {
         assertEquals(preco_normal, txtPrecoNormal);
         assertEquals(preco_assinante, txtPrecoAssinante);
         salvarEvidencia("Validou os dados >>>\nNome: " + nome + "\nFornecedor: " + fornecedor + "\nPreço Normal: " + preco_normal + "\nPreço Assinante: " + preco_assinante);
-
     }
 
     public void incluiOProdutoNoCarrinho() {

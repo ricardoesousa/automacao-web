@@ -30,18 +30,19 @@ public class Carrinho extends DriverManagerFactory {
     }
 
     public void excluiProduto() {
-        String mensagemEsperada = "Sua sacola está vazia";
-
         action.click(botaoLixeira).perform();
         salvarEvidencia("Clicou no botão 'Lixeira'");
 
         botaoExcluir.click();
         salvarEvidencia("Clicou no botão 'Excluir'");
+    }
+
+    public void validaSacolaVazia() {
+        String mensagemEsperada = "Sua sacola está vazia";
 
         WebElement labelSacolaVazia = driver.findElement(By.xpath("//h1[text()='" + mensagemEsperada + "']"));
         assertTrue(labelSacolaVazia.isEnabled());
         salvarEvidencia("Validou mensagem '" + mensagemEsperada + "'");
-
     }
 
 }
