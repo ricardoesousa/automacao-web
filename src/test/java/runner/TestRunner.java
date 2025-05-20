@@ -14,4 +14,4 @@ import org.junit.runner.RunWith;
                 "json:target/json-cucumber-reports/cucumber.json",
                 "junit:target/xml-junit/junit.xml"},
         features = {"src/test/resources/features/"})
-public class RunnerTest { }
+public class TestRunner { }

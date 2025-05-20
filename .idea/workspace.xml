@@ -18,19 +18,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fd3e818-2d5d-45da-8ac0-b4bfc6e60b7d" name="Default Changelist" comment="&quot;Atualização de nomenclaturas, melhorias em validações de cenários e dados, ajustes no timeout, suporte a JDK 21 e adição de funcionalidade para salvar Page Source em falhas.&quot;">
+    <list default="true" id="5fd3e818-2d5d-45da-8ac0-b4bfc6e60b7d" name="Default Changelist" comment="&quot;Refatora código e adiciona novos recursos:&#10;&#10;- Renomeia classes, pacotes e métodos para maior legibilidade.&#10;- Adiciona funcionalidade para validação de sacola vazia.&#10;- Atualiza dependências para versões mais recentes.&#10;- Refatora lógica de factory para `DriverManagerFactory`.&#10;- Implementa salvamento de Page Source em caso de falhas.&#10;- Altera configuração para suporte ao JDK 21.&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/driver/DriverManagerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/driver/DriverManagerFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hooks/DefaultProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/properties/DefaultProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Carrinho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Carrinho.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Produto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/report/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/report/Report.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/hooks/Hook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hooks/Hook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/runner/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runner/RunnerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/ProdutoSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/ProdutoSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Produto.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Produto.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/runner/RunnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runner/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +74,7 @@
     "JUnit.Runner (1).executor": "Run",
     "JUnit.Runner.executor": "Debug",
     "JUnit.RunnerTest.executor": "Run",
+    "JUnit.TestRunner.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -104,7 +96,7 @@
       <recent name="hooks" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RunnerTest">
+  <component name="RunManager" selected="JUnit.TestRunner">
     <configuration name="Feature: Produto (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="3" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Produto.feature" />
@@ -143,21 +135,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Runner (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="automacao-web" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="runner.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="runner" />
-      <option name="MAIN_CLASS_NAME" value="runner.Runner" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Runner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="desafio-web-petz" />
       <extension name="coverage">
@@ -173,7 +150,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RunnerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Runner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="automacao-web" />
       <extension name="coverage">
         <pattern>
@@ -182,7 +159,22 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="runner" />
-      <option name="MAIN_CLASS_NAME" value="runner.RunnerTest" />
+      <option name="MAIN_CLASS_NAME" value="runner.Runner" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="automacao-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="runner.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="runner" />
+      <option name="MAIN_CLASS_NAME" value="runner.TestRunner" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -190,7 +182,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RunnerTest" />
+        <item itemvalue="JUnit.TestRunner" />
         <item itemvalue="Cucumber Java.Feature: Produto (1)" />
         <item itemvalue="JUnit.Runner (1)" />
         <item itemvalue="JUnit.Runner" />
@@ -223,7 +215,23 @@
       <option name="project" value="LOCAL" />
       <updated>1745253022317</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="&quot;Refatora código e adiciona novos recursos:&#10;&#10;- Renomeia classes, pacotes e métodos para maior legibilidade.&#10;- Adiciona funcionalidade para validação de sacola vazia.&#10;- Atualiza dependências para versões mais recentes.&#10;- Refatora lógica de factory para `DriverManagerFactory`.&#10;- Implementa salvamento de Page Source em caso de falhas.&#10;- Altera configuração para suporte ao JDK 21.&quot;">
+      <option name="closed" value="true" />
+      <created>1745281005157</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1745281005157</updated>
+    </task>
+    <task id="LOCAL-00004" summary="&quot;Refatora código e adiciona novos recursos:&#10;&#10;- Renomeia classes, pacotes e métodos para maior legibilidade.&#10;- Adiciona funcionalidade para validação de sacola vazia.&#10;- Atualiza dependências para versões mais recentes.&#10;- Refatora lógica de factory para `DriverManagerFactory`.&#10;- Implementa salvamento de Page Source em caso de falhas.&#10;- Altera configuração para suporte ao JDK 21.&quot;">
+      <option name="closed" value="true" />
+      <created>1745281050278</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1745281050278</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -246,14 +254,15 @@
     <MESSAGE value="&quot;Atualiza tempo de timeout, refatora métodos e elementos das páginas, adiciona suporte a salvar page source em falhas e migra projeto para Java 21.&quot;" />
     <MESSAGE value="&quot;Refatoração geral: renomeação de variáveis, modernização para JDK 21, ajustes nos elementos de página e cenários de teste, adição de captura de evidências em falhas.&quot;" />
     <MESSAGE value="&quot;Atualização de nomenclaturas, melhorias em validações de cenários e dados, ajustes no timeout, suporte a JDK 21 e adição de funcionalidade para salvar Page Source em falhas.&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Atualização de nomenclaturas, melhorias em validações de cenários e dados, ajustes no timeout, suporte a JDK 21 e adição de funcionalidade para salvar Page Source em falhas.&quot;" />
+    <MESSAGE value="&quot;Refatora código e adiciona novos recursos:&#10;&#10;- Renomeia classes, pacotes e métodos para maior legibilidade.&#10;- Adiciona funcionalidade para validação de sacola vazia.&#10;- Atualiza dependências para versões mais recentes.&#10;- Refatora lógica de factory para `DriverManagerFactory`.&#10;- Implementa salvamento de Page Source em caso de falhas.&#10;- Altera configuração para suporte ao JDK 21.&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Refatora código e adiciona novos recursos:&#10;&#10;- Renomeia classes, pacotes e métodos para maior legibilidade.&#10;- Adiciona funcionalidade para validação de sacola vazia.&#10;- Atualiza dependências para versões mais recentes.&#10;- Refatora lógica de factory para `DriverManagerFactory`.&#10;- Implementa salvamento de Page Source em caso de falhas.&#10;- Altera configuração para suporte ao JDK 21.&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/report/Report.java</url>
-          <line>64</line>
+          <line>62</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>

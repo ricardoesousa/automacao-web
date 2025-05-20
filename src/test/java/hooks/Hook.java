@@ -11,6 +11,7 @@ import report.Report;
 
 import java.time.Duration;
 
+import static driver.DriverType.EDGE;
 import static report.Report.salvarEvidencia;
 import static report.Report.salvarPageSource;
 
@@ -21,7 +22,7 @@ public class Hook extends DriverManagerFactory implements DefaultProperties {
     @Before
     public void init(Scenario scenario) {
         Report.scenario = scenario;
-        driverManager = DriverManagerFactory.getManager(DriverType.EDGE);
+        driverManager = DriverManagerFactory.getManager(EDGE);
         driver = driverManager.getDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIME_OUT));
         driver.manage().window().maximize();
